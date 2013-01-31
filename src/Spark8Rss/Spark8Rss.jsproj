@@ -47,14 +47,13 @@
     <TargetPlatformIdentifier>Windows</TargetPlatformIdentifier>
     <TargetPlatformVersion>8.0</TargetPlatformVersion>
     <DefaultLanguage>en-US</DefaultLanguage>
-    
     <PackageCertificateKeyFile>Spark8Rss_TemporaryKey.pfx</PackageCertificateKeyFile>
-    
   </PropertyGroup>
   <ItemGroup>
     <AppxManifest Include="package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
+    <Content Include="..\..\..\..\%40Project\Spark8Rss\src\Spark8Rss\js\jquery.min.js" />
     <Content Include="default.html" />
     <Content Include="images\logo.png" />
     <Content Include="images\smalllogo.png" />
@@ -62,9 +61,7 @@
     <Content Include="images\storelogo.png" />
     <Content Include="js\default.js" />
     <Content Include="css\default.css" />
-    
     <None Include="Spark8Rss_TemporaryKey.pfx" />
-    
   </ItemGroup>
   <ItemGroup>
     <SDKReference Include="Microsoft.WinJS.1.0, Version=1.0" />
