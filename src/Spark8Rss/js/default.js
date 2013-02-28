@@ -10,6 +10,7 @@
     var articlesList;
     var applicationData = Windows.Storage.ApplicationData.current;
     var localSettings = applicationData.localSettings;
+    var isSuspended = false;
     app.onactivated = function (args) {
         if (args.detail.kind === activation.ActivationKind.launch) {
             if (args.detail.previousExecutionState !== activation.ApplicationExecutionState.terminated) {
@@ -18,6 +19,7 @@
             } else {
                 // TODO: This application has been reactivated from suspension.
                 // Restore application state here.
+                isSuspended = false;
             }
 
             var articlelistElement = document.getElementById("articlelist");
@@ -39,6 +41,7 @@
     };
 
     app.oncheckpoint = function (args) {
+        isSuspended = true;
         // TODO: This application is about to be suspended. Save any state
         // that needs to persist across suspensions here. You might use the
         // WinJS.Application.sessionState object, which is automatically
@@ -95,10 +98,13 @@
                     article.date = item.querySelector("published").textContent;
                     //article.content = item.querySelector("content").textContent;
                     article.url = item.querySelector("link").attributes["href"].value;
-                    articlesList.unshift(article);
+                    articlesList.push(article);
                 }
 
             });
+
+            if (isSuspended)
+                return;
 
             setTimeout(function () {
                 priv.downloadGitHubFeed();
