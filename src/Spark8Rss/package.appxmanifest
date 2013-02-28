@@ -4,7 +4,7 @@
   <Properties>
     <DisplayName>Github RSS Feed</DisplayName>
     <PublisherDisplayName>Codespark</PublisherDisplayName>
-    <Logo>images\storelogo.png</Logo>
+    <Logo>images\github\storelogo.png</Logo>
   </Properties>
   <Prerequisites>
     <OSMinVersion>6.2.1</OSMinVersion>
@@ -15,9 +15,9 @@
   </Resources>
   <Applications>
     <Application Id="App" StartPage="default.html">
-      <VisualElements DisplayName="Github RSS Feed" Logo="images\logo.png" SmallLogo="images\smalllogo.png" Description="Spark8Rss" ForegroundText="light" BackgroundColor="#464646">
+      <VisualElements DisplayName="Github RSS Feed" Logo="images\github\logo.png" SmallLogo="images\github\smalllogo.png" Description="Spark8Rss" ForegroundText="light" BackgroundColor="#464646">
         <DefaultTile ShowName="allLogos" />
-        <SplashScreen Image="images\splashscreen.png" />
+        <SplashScreen Image="images\github\splashscreen.png" />
       </VisualElements>
     </Application>
   </Applications>
